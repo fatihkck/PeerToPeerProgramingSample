@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FilesShare.Contracts.Repository;
+using FilesShare.Contracts.Services;
+using FilesShare.Domain.Models;
 using FilesShare.Logics.PnrpManager;
 using FilesShare.Logics.ServiceManager;
-using FilesShare.Domain.Models;
+using System;
 using System.Diagnostics;
-using FilesShare.Contracts.Services;
-using FilesShare.Contracts.Repository;
+using System.Linq;
 using System.Net;
 
 namespace FilesShare.Test
