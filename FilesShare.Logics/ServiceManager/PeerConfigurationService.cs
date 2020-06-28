@@ -58,10 +58,10 @@ namespace FilesShare.Logics.ServiceManager
             var endPoint = new ServiceEndpoint(
                 ContractDescription.GetContract(typeof(IPingService))
                 , binding
-                , new EndpointAddress("net.p2p://VideoFileShare")
+                , new EndpointAddress("net.p2p://Fileshare")
                 );
             Peer.Host = new PingService();
-            _factory = new DuplexChannelFactory<IPingService>(new InstanceContext(Peer.Host));
+            _factory = new DuplexChannelFactory<IPingService>(new InstanceContext(Peer.Host), endPoint);
             Peer.Channel = _factory.CreateChannel();
             Communication = (ICommunicationObject)Peer.Channel;
             if (Communication != null)
