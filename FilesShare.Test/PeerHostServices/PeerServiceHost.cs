@@ -3,13 +3,8 @@ using FilesShare.Contracts.Services;
 using FilesShare.Domain.Models;
 using FilesShare.Logics.ServiceManager;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FilesShare.Test.PeerHostServices
 {
@@ -52,12 +47,12 @@ namespace FilesShare.Test.PeerHostServices
                 {
                     Console.WriteLine("Peer services started");
 
-                    peer.Channel.Ping(ConfigurePeer.Port, RegisterPeer.PeerUri);
-
                     if (ConfigurePeer.PingService != null)
                     {
                         ConfigurePeer.PingService.PeerEndPointInformation += PingService_PeerEndPointInformation;
                     }
+
+                    peer.Channel.Ping(ConfigurePeer.Port, RegisterPeer.PeerUri);
 
                 }
                 else

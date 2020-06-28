@@ -1,6 +1,5 @@
-﻿using System.Net.PeerToPeer;
-using System.Net;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Net.PeerToPeer;
 
 namespace FilesShare.Domain.Models
 {

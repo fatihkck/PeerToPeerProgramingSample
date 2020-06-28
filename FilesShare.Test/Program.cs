@@ -7,7 +7,6 @@ using FilesShare.Test.PeerHostServices;
 using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
 using System.Threading;
 
 namespace FilesShare.Test
@@ -39,14 +38,6 @@ namespace FilesShare.Test
             IPeerRegistrationRepository peerRegistration = new PeerRegistrationManager();
             IPeerNameResolverRepository peerNameResolverRepository = new PeerNameResolver(peer.PeerId);
             IPeerConfigurationService<PingService> peerConfigurationService = new PeerConfigurationService(peer);
-
-            //peerRegistration.StartPeerRegistration(peer.UserName, peerConfigurationService.Port);
-
-            //Console.WriteLine("Peer Information");
-            //Console.WriteLine($"Peer Uri : {peerRegistration.PeerUri}   Port : {peerConfigurationService.Port}");
-
-            //var host = Dns.GetHostEntry(peerRegistration.PeerUri);
-            //host.AddressList?.ToList().ForEach(p => Console.WriteLine($"\t\t IP:{p}"));
 
             PeerServiceHost psh = new PeerServiceHost(peerRegistration, peerNameResolverRepository, peerConfigurationService);
             //psh.RunPeerServiceHost(peer);

@@ -49,13 +49,13 @@ namespace FilesShare.Logics.ServiceManager
 
         public bool StartPeerServices()
         {
-#pragma warning disable 618
+
             var binding = new NetPeerTcpBinding
             {
                 Security = { Mode = SecurityMode.None }
 
             };
-#pragma warning disable 618
+
 
             var endPoint = new ServiceEndpoint(
                 ContractDescription.GetContract(typeof(IPingService))
