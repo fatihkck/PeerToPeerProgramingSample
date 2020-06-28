@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Peer.cs" />
+    <Compile Include="Models\PeerEndPointInfo.cs" />
     <Compile Include="Models\PeerEndPointsCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

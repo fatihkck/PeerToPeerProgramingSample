@@ -38,7 +38,7 @@ namespace FilesShare.Test
             };
             IPeerRegistrationRepository peerRegistration = new PeerRegistrationManager();
             IPeerNameResolverRepository peerNameResolverRepository = new PeerNameResolver(peer.PeerId);
-            IPeerConfigurationService peerConfigurationService = new PeerConfigurationService(peer);
+            IPeerConfigurationService<PingService> peerConfigurationService = new PeerConfigurationService(peer);
 
             //peerRegistration.StartPeerRegistration(peer.UserName, peerConfigurationService.Port);
 
