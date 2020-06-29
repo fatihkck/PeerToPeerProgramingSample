@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileShare\IFileShareService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IPeerNameResolverRepository.cs" />
     <Compile Include="Repository\IPeerRegistrationRepository.cs" />

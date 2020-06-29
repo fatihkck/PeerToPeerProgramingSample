@@ -7,5 +7,8 @@ namespace FilesShare.Contracts.Services
     {
         [OperationContract(IsOneWay = true)]
         void Ping(int port, string peerUri);
+
+        [OperationContract(IsOneWay = true)]
+        void SearchFiles(string searchTerm);
     }
 }

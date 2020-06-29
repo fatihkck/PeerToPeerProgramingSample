@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSearch\FileSearchResultModel.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileMetaData.cs" />
+    <Compile Include="Models\FilePart.cs" />
+    <Compile Include="Models\FilePartModel.cs" />
     <Compile Include="Models\Peer.cs" />
     <Compile Include="Models\PeerEndPointInfo.cs" />
     <Compile Include="Models\PeerEndPointsCollection.cs" />

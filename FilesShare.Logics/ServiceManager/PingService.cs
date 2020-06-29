@@ -1,4 +1,5 @@
 ﻿using FilesShare.Contracts.Services;
+using FilesShare.Domain.FileSearch;
 using FilesShare.Domain.Models;
 using System;
 using System.Linq;
@@ -7,9 +8,12 @@ using System.Net;
 namespace FilesShare.Logics.ServiceManager
 {
     public delegate void OnPeerInfo(PeerEndPointInfo endPointInfo);
+    public delegate void FileSearchResultDelegate(FileSearchResultModel fileSearch);
+
     public class PingService : IPingService
     {
         public event OnPeerInfo PeerEndPointInformation;
+        public event FileSearchResultDelegate FileSearchResult;
 
         public void Ping(int port, string peerUri)
         {
@@ -24,6 +28,11 @@ namespace FilesShare.Logics.ServiceManager
             };
 
             PeerEndPointInformation?.Invoke(peerInfo);
+        }
+
+        public void SearchFiles(string searchTerm)
+        {
+            
         }
     }
 }

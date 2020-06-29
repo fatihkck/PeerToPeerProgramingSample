@@ -54,6 +54,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\FileDetailView.xaml.cs">
+      <DependentUpon>FileDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileResultView.xaml.cs">
+      <DependentUpon>FileResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,12 +75,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\FilePartExtension.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\FileDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FileResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PnrpManager\PeerServiceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +123,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileShareServices\FileShareClientService\" />
+    <Folder Include="FileShareServices\FileShareHostService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilesShare.Contracts\FilesShare.Contracts.csproj">
+      <Project>{AB27C45C-A478-4732-8CCD-B24C2F3E9146}</Project>
+      <Name>FilesShare.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FilesShare.Domain\FilesShare.Domain.csproj">
+      <Project>{B7978300-D4A8-42B0-AFFE-0F42AFE288EC}</Project>
+      <Name>FilesShare.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FilesShare.Logics\FilesShare.Logics.csproj">
+      <Project>{02FC997A-A511-4C32-A9B2-013710531B52}</Project>
+      <Name>FilesShare.Logics</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
