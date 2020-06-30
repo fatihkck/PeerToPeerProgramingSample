@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileShareManager\FileManager.cs" />
     <Compile Include="PnrpManager\PeerNameResolver.cs" />
     <Compile Include="PnrpManager\PeerRegistrationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

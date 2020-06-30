@@ -1,4 +1,5 @@
-﻿using FilesShare.Domain.Models;
+﻿using FilesShare.Domain.FileSearch;
+using FilesShare.Domain.Models;
 using System.ServiceModel;
 
 namespace FilesShare.Contracts.FileShare
@@ -11,5 +12,8 @@ namespace FilesShare.Contracts.FileShare
 
         [OperationContract(IsOneWay = false)]
         FilePartModel GetFilePartBytes(FilePart filePart, FileMetaData fileMeta);
+
+        [OperationContract(IsOneWay = false)]
+        void ForwardResult(FileSearchResultModel result);
     }
 }

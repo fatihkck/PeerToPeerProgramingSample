@@ -47,6 +47,7 @@
     <Compile Include="Models\FileMetaData.cs" />
     <Compile Include="Models\FilePart.cs" />
     <Compile Include="Models\FilePartModel.cs" />
+    <Compile Include="Models\HostInfo.cs" />
     <Compile Include="Models\Peer.cs" />
     <Compile Include="Models\PeerEndPointInfo.cs" />
     <Compile Include="Models\PeerEndPointsCollection.cs" />

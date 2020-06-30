@@ -49,10 +49,15 @@ namespace FilesShare.Test.PeerHostServices
 
                     if (ConfigurePeer.PingService != null)
                     {
-                        ConfigurePeer.PingService.PeerEndPointInformation += PingService_PeerEndPointInformation;
+                        ConfigurePeer.PingService.PeerEndPointInformation += PingServiceOnPeerEndPointInformation;
                     }
 
-                    peer.Channel.Ping(ConfigurePeer.Port, RegisterPeer.PeerUri);
+                    peer.Channel.Ping(new HostInfo
+                    {
+                        Id = peer.PeerId,
+                        Port = ConfigurePeer.Port,
+                        Uri = RegisterPeer.PeerUri
+                    });
 
                 }
                 else
@@ -63,12 +68,11 @@ namespace FilesShare.Test.PeerHostServices
 
         }
 
-        private void PingService_PeerEndPointInformation(PeerEndPointInfo endPointInfo)
+        private void PingServiceOnPeerEndPointInformation(HostInfo endPointInfo)
         {
             if (endPointInfo != null)
             {
-                Console.WriteLine($"New Peer EndPoint ********** {endPointInfo.PeerUri}");
-                endPointInfo.PeerIpCollection.ToList()?.ForEach(p => Console.WriteLine($"\t\t\t IP: {p.Address}:{p.Port}"));
+                Console.WriteLine($"New Peer EndPoint ********** {endPointInfo.Uri}");
             }
         }
     }

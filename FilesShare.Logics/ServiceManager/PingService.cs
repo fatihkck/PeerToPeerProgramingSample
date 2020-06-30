@@ -7,7 +7,7 @@ using System.Net;
 
 namespace FilesShare.Logics.ServiceManager
 {
-    public delegate void OnPeerInfo(PeerEndPointInfo endPointInfo);
+    public delegate void OnPeerInfo(HostInfo endPointInfo);
     public delegate void FileSearchResultDelegate(FileSearchResultModel fileSearch);
 
     public class PingService : IPingService
@@ -15,22 +15,22 @@ namespace FilesShare.Logics.ServiceManager
         public event OnPeerInfo PeerEndPointInformation;
         public event FileSearchResultDelegate FileSearchResult;
 
-        public void Ping(int port, string peerUri)
+        public void Ping(HostInfo info)
         {
-            var host = Dns.GetHostEntry(peerUri);
+            var host = Dns.GetHostEntry(info.Uri);
             IPEndPointCollection ips = new IPEndPointCollection();
-            host.AddressList?.ToList().ForEach(p => { ips.Add(new IPEndPoint(p, port)); });
+            host.AddressList?.ToList().ForEach(p => { ips.Add(new IPEndPoint(p, info.Port)); });
             var peerInfo = new PeerEndPointInfo
             {
                 LastUpdated = DateTime.UtcNow,
-                PeerUri = peerUri,
+                PeerUri = info.Uri, 
                 PeerIpCollection = ips
             };
 
-            PeerEndPointInformation?.Invoke(peerInfo);
+            PeerEndPointInformation?.Invoke(info);
         }
 
-        public void SearchFiles(string searchTerm)
+        public void SearchFiles(string searchTerm, string clientHost)
         {
             
         }
