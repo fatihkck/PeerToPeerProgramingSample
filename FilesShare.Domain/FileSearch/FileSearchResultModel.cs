@@ -5,7 +5,7 @@ namespace FilesShare.Domain.FileSearch
 {
     public class FileSearchResultModel
     {
-        public string SerivceHost { get; set; }
+        public HostInfo SerivceHost { get; set; }
         public ObservableCollection<FileMetaData> Files { get; set; }
     }
 }
