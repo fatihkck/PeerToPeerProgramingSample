@@ -10,6 +10,6 @@ namespace FilesShare.Contracts.Services
         void Ping(HostInfo info);
 
         [OperationContract(IsOneWay = true)]
-        void SearchFiles(string searchTerm, string clientHost);
+        void SearchFiles(string searchTerm, string peerId);
     }
 }
